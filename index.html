@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statement</title>
+    <link rel="stylesheet" href="fig.css">
+    <link rel="stylesheet" href="https://www.joshwcomeau.com/fonts/wotfard/wotfard-medium-webfont.woff2">
+    <link rel="stylesheet" href="https://www.joshwcomeau.com/fonts/wotfard/wotfard-regular-webfont.woff2">
+    <link rel="stylesheet" href="https://www.joshwcomeau.com/fonts/wotfard/wotfard-semibold-webfont.woff2">
+
+</head>
+<body >
+    <header>
+        <div class="cheader">
+            <div class="cheader2">
+                <nav>
+    <div style="display: flex;gap: 80px;align-items: center;">
+                    <div class="logomain">
+                        <span class="logo">Josh</span>
+                        <div class="logomain2">
+                            <span><img src="./fig.svg" alt=""></span>
+                            <span><img src="./fig2.svg" alt=""></span>
+                        </div>
+                        <span class="logo">Comeau</span>
+                    </div>
+                    <ul class="navigationlogo2">
+                        <li>Latest</li>
+                        <li class="posts" style="transform:translateY(-2px); cursor: pointer;">Posts
+                            <img src="./caret.svg" alt="" class="caret" style="transform:translateY(4.5px);">
+                            <ul class="drop-down-menu">
+                                <!-- <img src="./top.svg" alt=""> -->
+                            <li> React</li>
+                            <li> Css</li>
+                            <li> Gatsby</li>
+                            <li> Performance</li>
+                            <li> Animation</li>
+                            <li> Career</li>
+                            <li> Next.js</li>
+                            <li> JavaScript</li>
+                            </ul>
+                        
+                        </li>
+                        <li>Snippets</li>
+                        <li>Goodies</li>
+                    </ul>
+        </div>
+                    <img src="./doubleline.svg" alt="" class="dobuleline">
+                    <ul class="navigationlogo2">
+                        <li><img src="./fig3.svg" alt="" class="img-1"></li>
+                        <li><img src="./fig4n.svg" alt="" class="img-2"></li>
+                        <li><img src="./fig5.svg" alt="" class="img-3"></li>
+                    </ul>
+                </nav>
+            </div>
+    
+            <div>
+                <div class="space2"></div>
+                <div navmajor2="" style="padding-block-start: 100px;width: 80%;margin-inline: auto;max-width: 1100px;">
+                    <ul class="nav2">
+                        <a href=""><li>Home</li></a>
+                        <li><img src="./fig6.svg" alt=""></li>
+                        <a href=""><li>Tutorials</li></a>
+                        <li><img src="./fig6.svg" alt=""></li>
+                        <a href=""><li>JavaScript</li></a>
+                    </ul>
+                    <h2>Statements Vs. Expressions</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+        <div class="space"></div>
+    <div class="bodym">
+    
+    
+    <div class="main-flex">
+        <div class="sub-flex1" style="margin-block-end: -30%;">
+    <main>
+        <article>
+        <p>So, a few years ago, I was teaching web development at a local coding bootcamp, and a student asked me this question:</p>
+        <blockquote>What's the difference between a "statement" and an "expression" in JavaScript?</blockquote>
+        <p>I felt like I knew the answer to this question, but when I tried to explain it, I couldn't put it into words. I had a feeling about it, but my actual knowledge was surprisingly hazy.</p>
+        <p>There's nothing more humbling than teaching 😅. Students have a knack for identifying the "fuzzy spots" in our understanding.</p>
+        <p>I've since come to realize that this question is supremely important. It's a load-bearing concrete pillar that will help support a ton of JavaScript knowledge.</p>
+        <p>This is especially true for React developers. Most of those JSX rules you've had to memorize, and always forget to follow, are the result of this statement/expression duality.</p>
+        <p> In this blog post, I'm going to share some of the epiphanies I've had about this distinction, and how we can use this information in our day-to-day work.</p>
+        <div class="artmain">
+            <span class="art0">
+                <svg style="color:hsl(245, 100%, 60%);" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12" ></line><line x1="12" y1="8" x2="12.01" y2="8" ></line></svg>
+            </span>
+            <div class="art1">
+            <h4>Intended audience</h4>
+            <p>This tutorial assumes that you're comfortable with basic JavaScript syntax, but is otherwise written to be beginner-friendly.</p>
+            <p>Towards the end of the tutorial, we look at some React implications, and this section requires some React experience. If you're not a React dev, feel free to skip this section; hopefully, the rest of the tutorial will still offer a ton of value!</p>
+        </div>
+        </div>
+    </article>
+        <article style="position: relative;">
+           <a href="" class="with-decoration" onmouseover="displayClipEx()" onmouseout="hideClipEx()"> <h3 class="sub-header2"><img src="./clip.svg" alt=""class="clip1" onmouseover="displayClipEx()" onmouseout="hideClipEx()">Expressions</h3></a>
+            <p id="expression">Expressions
+                At its core, an expression is a bit of JavaScript code that produces a value.</p>
+            <p>For example, these are all expressions:</p>
+            <div>
+                <ul class="nav2">
+                    <li><img src="./fig7.svg" alt="" class="indent" loading="lazy"></li>
+                    <li><span class="highlights">1</span>→ produces  <span class="highlights">1</span></li>
+                </ul>
+                <ul class="nav2">
+                    <li><img src="./fig7.svg" alt="" class="indent"></li>
+                    <li><span class="highlights"> "hello"</span> → produces <span class="highlights"> "hello"</span></li>
+                </ul>
+                <ul class="nav2">
+                    <li><img src="./fig7.svg" alt="" class="indent"></li>
+                    <li><span class="highlights"> "hello"</span> → produces <span class="highlights"> "hello"</span></li>
+                </ul>
+                <ul class="nav2">
+                    <li><img src="./fig7.svg" alt="" class="indent"></li>
+                    <li><span class="highlights">5 * 10</span> → produces <span> 50</span></li>
+                </ul>
+                <ul class="nav2">
+                    <li><img src="./fig7.svg" alt="" class="indent"></li>
+                    <li><span class="highlights">num > 100</span> → produces either <span class="highlights">true</span> or <span class="highlights">false</span></li>
+                 </ul>
+                 <ul class="nav2">
+                    <li><img src="./fig7.svg" alt="" class="indent"></li>
+                    <li><span class="highlights"> isHappy ? "🙂" : "🙁"</span> → produces an emoji</li>
+                </ul>
+                 <ul class="nav2" >
+                    <li><img src="./fig7.svg" alt="" class="indent"></li>
+                    <li><span class="highlights"> [1, 2, 3].pop()</span> → produces the number 3</li>
+                 </ul>
+             </div>
+            <p>Expressions can contain expressions. For example, how many expressions do you count in this chunk of JS code? Make a guess, and then <span class="span2"> drag the slider</span> to see them each highlighted:</p>
+            <div class="art2">
+                <p>
+                    (5 + 1) * 2
+                </s>
+                <div class="art2-1">
+                   <div class="art2-2">Highlighted Expression:</div>
+                   <div class="ruler"><hr></div>
+                </div>
+                <div class="art2-1">
+                    <div class="art2-3"></div>
+                   <div class="ruler2" style="width: 305px;
+    transform: translateY(-1px);
+"><hr></div>
+                </div>
+            </div>
+        </article>
+        <article>
+            <a href="" class="with-decoration" onmouseover="displayClipSt()" onmouseout="hideClipSt()"> <h3 class="sub-header2"><img src="./clip.svg" alt=""class="clip2" onmouseover="displayClipSt()" onmouseout="hideClipSt()">Statement</h3></a>
+            <p>A JavaScript program is a sequence of statements. Each statement is an instruction for the computer to do something.</p>
+            <p>A JavaScript program is a sequence of statements. Each statement is an instruction for the computer to do something.</p>
+            <div>
+            <span class="span4" style="margin-left: 90%;">JS</span>
+            <div class="span3"><span class="c1">let</span> hi = <span class="c2"> 5</span>;
+            </div>
+            </div>
+            <div>
+                <span class="span4" style="margin-left: 90%;">JS</span>
+            <div class="span3"> <span class="c1"> if </span>(hi > <span class="c2"> 10</span>) { <br>
+               <span class="c3"> // More statements here <br></span>
+              }</div>
+            </div>
+            <div>
+                <span class="span4" style="margin-left: 90%;">JS</span> 
+            <div class="span3"><span class="c1"> throw new</span> Error(<span class="c1">'Something exploded!'</span>);</div>
+        </div>
+              <p>Here's how I like to think about this: statements are the rigid structure that holds our program together, while expressions fill in the details.</p>
+              <p>Statements often have "slots" for expressions. We can put any expression we like into those slots.</p>
+              <p>For example, declaring a variable has an expression slot:</p>
+              <div>
+                <span class="span4" style="margin-left: 90%;">JS</span>
+              <div class="span3"><span class="c1">let</span> hi = <span class="c3"> /* some expression */</span>;</div>
+            </div>
+              <p>We can use any of the expressions we saw earlier in that slot:</p>
+              <div>
+                <span class="span4" style="margin-left: 90%;">JS</span>
+              <div class="span3"><span class="c1">let</span> hi <span class="c1">=</span> <span class="c1"> 1</span>;<br>
+                <span class="c1">let</span> hi <span class="c1">=</span><span class="c1"> "hello"</span>;<br>
+                <span class="c1">let</span> hi <span class="c1">=</span><span class="c2"> 5 * 10</span>;<br>
+                <span class="c1">let</span> hi <span class="c1">=</span> num <span class="c1"> ></span><span class="c2"> 100</span>;<br>
+                <span class="c1">let</span> hi <span class="c1">=</span> isHappy ?<span class="c2"> "🙂" : "🙁"</span>;<br>
+                <span class="c1">let</span> hi <span class="c1">=</span> [<span class="c2"> 1, 2, 3</span>].<span style="color:rgb(0,0,220) ;">pop()</span>;</div>
+            </div>
+                <p>In terms of valid syntax, expressions are <span class="italic">interchangeable</span>. If a statement has an expression slot, we can put <span class="bold">any</span> expression there, and the code will run. We won't get a syntax error.</p>
+                <p>That said, we can still run into other issues. For example, the following code is syntactically valid, but we'll crash the browser tab if we try to run it, since it causes an infinite loop:</p>
+                <div>
+                    <span class="span4" style="margin-left: 90%;">JS</span>
+                <div class="span3"><span class="c2"> while</span> (<span class="c2">"hello"</span>) {
+                   <div class="c1"> // Because "hello" never changes, this loop will <br>
+                    // run over and over until the script crashes.<br>
+                    // Syntactically valid, but still problematic.<br> 
+                    </div>
+                  }</div>
+                </div>
+                  <h3>A handy trick</h3>
+                  <p>Want to know whether a chunk of JS is an expression or a statement? Try to log it out!</p>
+                  <div>
+                    <span class="span4" style="margin-left: 90%;">JS</span>
+                  <div class="span3">console. <span class="c2">log</span>(<span class="c2">/* Some chunk of JS here */</span>);</div>
+                </div>
+                  If it runs, the code is an <span class="italic"> expression</span>. If you get an error, it's a statement (or, possibly, invalid JS).
+
+<p> As a bonus, we can even see what the expression resolves to, since it'll be printed in the browser console!</p>
+
+<p> This works because <span class="bold"> all function arguments must be expressions.</span> Expressions produce a value, and that value will be passed into the function. Statements don't produce a value, and so they can't be used as function arguments.</p>
+
+<p> Even as an experienced developer, I rely a <span class="italic">ton</span> on <span class="highlights">console.log</span>. It's a wonderfully versatile tool!</p>
+
+
+        </article>
+        <article>
+            <a href="" class="with-decoration" onmouseover="displayClipEs()" onmouseout="hideClipEs()"> <h3 class="sub-header2"><img src="./clip.svg" alt=""class="clip3" onmouseover="displayClipEs()" onmouseout="hideClipEs()">Expressions as statement</h3></a>
+            <p>Here is an expression: <span class="highlights"> 1 + 2 + 3</span>.</p>
+            <p>What happens if we create a JS file that includes only this expression? Let's imagine we save the following content as <span class="highlights">test.js:</span></p>
+            <div>
+                <span class="span4" style="margin-left: 90%;">JS</span>
+            <div class="span3"><span class="c2"> 1 + 2 + 3</span></div>
+        </div>
+<p>How many statements does this file have? Zero or one?</p>
+<p>Here's the deal: expressions can't exist on their own. They're always part of a statement. And so in this case, we have a statement that looks like this:</p>
+<div><span class="span4" style="margin-left: 90%;">JS</span>
+<div class="span3"><span class="c2">/* expression slot */</span></div>
+</div>
+<p>The statement is essentially empty aside from its expression slot. Our expression <span class="highlights"> 1 + 2 + 3</span> fills this slot, and our statement is complete.</p>
+<p>In other words, all of the following lines are valid statements:</p>
+<div>
+    <span class="span4" style="margin-left: 90%;">JS</span>
+<div class="span3"><span class="c2"> // Statement 1:
+   <span class="c1">let</span>hi = /* expression slot */;<br>
+    // Statement 2:
+    <span class="c1">return</span> /* expression slot */;
+    // Statement 3:
+    <span class="c1">if</span> (/* expression slot */) { }
+    // Statement 4:
+    /* expression slot */</span></div>
+</div>
+    <p>Often, tutorials will falsely state that expressions are statements, but this isn't quite right. Expressions and statements are distinct things. But it's possible for a statement to wrap around an expression without providing any additional characters. <span class="bold"> Think of it like wrapping a sandwich in clear shrink wrap.</span></p>
+    <p>Statements typically end in a semi-colon, which marks the end of the statement. The semi-colon isn't necessary for certain statements, like <span class="highlights"> if</span> statements, <span class="highlights"> while</span> loops, and function declarations.</p>
+        </article>
+        <article>
+            <a href="" class="with-decoration" onmouseover="displayClipPi()" onmouseout="hideClipPi()"> <h3 class="sub-header2"><img src="./clip.svg" alt=""class="clip4" onmouseover="displayClipPi()" onmouseout="hideClipPi()">Practical implications in React</h3></a>
+            <p>If you've worked with React before, you're probably aware that squiggly brackets (<span class="highlights">{</span> and <span class="highlights">}</span>) allow us to embed bits of JavaScript within our JSX, like this:</p>
+            <div>
+                <span class="span4" style="margin-left: 90%;">JSX</span>
+            <div class="span3"><span class="c1">function</span> <span class="c2"> CountdownClock</span>({ secondsRemaining }) { <br>
+              <span class="c1">return </span> ( <br>
+                 <span class="c4"> &lt;div&gt;</span><br>
+                    Time <left:br></left:br>
+                    {Math.round(secondsRemaining / 60)} minutes! <br>
+                  <span class="c4">  &lt;/div&gt;</span> <br>
+                );
+              }</div>
+            </div>
+              <p>This is part of what makes React so magical; we have the full power of JavaScript available to us.
+
+                But there's a catch — we can't put any JavaScript inside the curly brackets. Specifically, we can only include expressions, not statements. The squiggly brackets essentially <span class="bold">create an expression slot within our JSX</span>.
+                
+                If we try to embed a statement here, like an if/else statement, we'll get an error:</p>
+                
+               <div> <span class="span4" style="margin-left: 90%;">JSX</span>
+               <div class="span3"> <span class="c1">function</span> <span class="c2"> CountdownClock</span>({ secondsRemaining }) { <br>
+                <span class="c1">return </span> ( <br>
+                      // 🚫 Throws a SyntaxError
+                      <span class="c4"> &lt;div&gt;</span><br>
+                        {<span class="c1"> if</span> (secondsRemaining > 0) { <br>
+                          `${secondsRemaining} seconds left`<br>
+                        } <span class="c1"> else</span> {
+                         <span class="c1"> "Time expired!"</span>
+                        }}
+                        <span class="c4">  &lt;/div&gt;</span> <br>
+                     );<br>
+                  }
+                </div>
+            </div>
+              <p>This blows up because statements don't produce a value, only expressions produce a value. If we want to embed if/else logic in our JSX, we need to use a <a href=""> ternary operator</a> expression:</p>
+              <div> <span class="span4" style="margin-left: 90%;">JSX</span>
+                
+              <div class="span3" style="padding-bottom: 0;"><div class="span3"> <span class="c1">function</span> <span class="c2"> CountdownClock</span>({ secondsRemaining }) { <br>
+                <span class="c1">return </span> ( <br>
+                 <span class="c2"> // ✅ No problemo</span><br>
+                 <span class="c4"> &lt;div&gt;</span><br>
+                    {secondsRemaining > 0
+                    <span class="c1">?</span> `${secondsRemaining} seconds left`<br>
+                      : <span class="c1"> "Time expired!"</span>
+                    }); <br>
+                  </div>
+                </div>
+            </div>
+              <p>This might seem like a weird JSX/React limitation,<span class="bold"> but it's actually a JavaScript limitation.</span></p>
+              <p>I think we often blame React for seemingly arbitrary rules, like how components must return a single top-level element. But more often than not, React is just warning us about a <span class="italic"> JavaScript </span> limitation.</p>
+              <p>Understanding the difference between statements and expressions is an important first step towards demystifying a whole category of React warnings and bugs. We also need to learn about how JSX compiles into JavaScript, and how React's reconciliation and render cycle works… but, alas, those topics are beyond the scope of this blog post!</p>
+              <p> Incidentally, I'm in the process of creating a comprehensive React course, the resource I wish existed when I was learning React. It's called <a href=""> The Joy of React </a>, and you can sign up for updates today!</p> 
+        </article>
+        <article>
+            <a href="" class="with-decoration" onmouseover="displayClipIs()" onmouseout="hideClipIs()"> <h3 class="sub-header2"><img src="./clip.svg" alt=""class="clip5" onmouseover="displayClipIs()" onmouseout="hideClipIs()">In Summary</h3></a>
+            <p>A JavaScript program consists of a sequence of statements. Each statement is an instruction to do something, like create a variable, run an if/else condition, or start a loop.</p>
+            <p>Expressions produce a value, and these values are slotted into statements, like a Super Nintendo cartridge that changes what the Super Nintendo does.</p>
+            <p>Expressions are always part of a statement, even if that statement is otherwise empty. For example, the code below runs a loop <span class="italic"> without</span> using a <span class="highlights"> for</span> statement, but it still includes an "empty wrapper" statement:</p>
+            <div><span class="span4" style="margin-left: 90%;">JS</span>
+            <div class="span3">data. <span class="c2">forEach</span>(item => console. <span class="c2">log</span>(item));</div>
+        </div>
+            <p>It can take a while for this distinction to become intuitive, but hopefully this blog post has clarified a few things!</p>
+            <div class="flexyy">
+            <div class="end">
+                <h5>LAST UPDATED</h5>
+                <div>HITS</div>
+            </div>
+            <div class="endmain">
+                <p class="end2">July 11th, 2022</p>
+                <div class="end3">34576</div>  
+            </div>
+        </div>
+            <h2 class="lh2">A front-end web development newsletter that sparks joy</h2>
+            <div class="front">
+            <p>My goal with this blog is to create helpful content for front-end web devs, and my newsletter is no different! I'll let you know when I publish new content, and I'll even  share <span class="italic">exclusive newsletter-only content</span> now and then.</p>
+            <p>No spam, unsubscribe at any time.</p>
+        </div>
+            <form action="" class="details form">
+                <div class="det">
+                <label for="">First Name</label>
+                <input type="text">
+            </div>
+            <div class="gap"></div>
+            <div class="det">
+                <label for="">Email</label>
+                <input type="text">
+            </div>
+            <div class="gap"></div>
+            <button type="submit" style="width: 175px; --magic-rainbow-color-newsletter-signup-button-0:hsl(240deg, 100%, 45%); --magic-rainbow-color-newsletter-signup-button-1:hsl(260deg, 100%, 55%); --magic-rainbow-color-newsletter-signup-button-2:hsl(325deg, 100%, 48%); transition: --magic-rainbow-color-newsletter-signup-button-0 1625ms linear 0s, --magic-rainbow-color-newsletter-signup-button-1 1625ms linear 0s, --magic-rainbow-color-newsletter-signup-button-2 1625ms linear 0s; background: radial-gradient( circle at top left, var(--magic-rainbow-color-newsletter-signup-button-2), var(--magic-rainbow-color-newsletter-signup-button-1), var(--magic-rainbow-color-newsletter-signup-button-0) );" class="UnstyledButton-sc-1qlpyz4-0 RainbowButton__ButtonElem-sc-8qw23r-0 dTBdvC hrUyxt"><span>Subscribe</span></button>
+            </form>
+        </article>
+    </main>
+</div>
+<div class="sub-flex2">
+    <aside class="sub-sub-flex">
+        <p class="asideh2" >TABLE OF CONTENTS</p>
+        <ul style="padding-block-end: 25px;">
+           <a href=""> <li class="asideli">Introduction</li></a>
+           <a href=""> <li class="asideli">Expression</li></a>
+           <a href=""> <li class="asideli">Statement</li></a>
+           <a href=""> <li class="asideli">A handy trick</li></a>
+           <a href=""> <li class="asideli">Expression as statements</li></a>
+           <a href=""> <li class="asideli">Practical implications in React</li></a>
+           <a href=""> <li class="asideli">In summary</li></a>
+        </ul>
+        <div style="display: flex;">
+        <svg class="svg2" width="48" height="40.32" viewBox="0 0 50 42" fill="none" style="transform: rotate(0deg);"><defs><linearGradient id="active-gradient-yuin" x1="25" y1="42" x2="26.3796" y2="0.0453673" gradientUnits="userSpaceOnUse"><stop stop-color="hsl(353deg, 100%, 52%)"></stop><stop offset="1" stop-color="hsl(313deg, 100%, 52%)"></stop></linearGradient><linearGradient id="inactive-gradient-yuin" x1="15" y1="41" x2="42" y2="-1.5" gradientUnits="userSpaceOnUse"><stop stop-color="#666" stop-opacity="0.4"></stop><stop offset="1" stop-color="#AAA" stop-opacity="0.4"></stop></linearGradient></defs><mask id="like-button-mask-yuin" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="42"><path d="M13.2537 0.0255029C23.4033 0.0255029 25.0273 10.5191 25.0273 10.5191C25.0273 10.5191 26.6512 -0.60088 37.6129 0.0255029C44.3441 0.410148 48.7484 6.32169 48.9804 12.1981C49.7924 32.7656 28.7678 41.5 25.0273 41.5C21.2868 41.5 -0.549833 32.3459 1.07416 12.1981C1.54782 6.32169 6.29929 0.0255029 13.2537 0.0255029Z" fill="#000000"></path></mask><mask id="active-gradient-mask-yuin" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="42"><polygon points="
+            0,42
+            50,42
+            50,-0.011698533618279328
+            0,-0.011698533618279328
+          " fill="#000000"></polygon></mask><g mask="url(#like-button-mask-yuin)"><path d="M13.2537 0.0255029C23.4033 0.0255029 25.0273 10.5191 25.0273 10.5191C25.0273 10.5191 26.6512 -0.60088 37.6129 0.0255029C44.3441 0.410148 48.7484 6.32169 48.9804 12.1981C49.7924 32.7656 28.7678 41.5 25.0273 41.5C21.2868 41.5 -0.549833 32.3459 1.07416 12.1981C1.54782 6.32169 6.29929 0.0255029 13.2537 0.0255029Z" fill="url(#inactive-gradient-yuin)"></path><g mask="url(#active-gradient-mask-yuin)"><path d="M13.2537 0.0255029C23.4033 0.0255029 25.0273 10.5191 25.0273 10.5191C25.0273 10.5191 26.6512 -0.60088 37.6129 0.0255029C44.3441 0.410148 48.7484 6.32169 48.9804 12.1981C49.7924 32.7656 28.7678 41.5 25.0273 41.5C21.2868 41.5 -0.549833 32.3459 1.07416 12.1981C1.54782 6.32169 6.29929 0.0255029 13.2537 0.0255029Z" fill="url(#active-gradient-yuin)"></path></g><g style="opacity: 0; transform: translate(0px, 0px);"><circle cx="15" cy="22" r="2" fill="#000000" fill-opacity="0.4"></circle><circle cx="35" cy="22" r="2" fill="#000000" fill-opacity="0.4"></circle></g><g style="opacity: 1;"><path d="M 13 23 Q 15 19, 17 23 " stroke="#000000" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M 33 23 Q 35 19, 37 23 " stroke="#000000" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></g><g><mask id="tongue-mask" mask-type="alpha" maskUnits="userSpaceOnUse" x="20" y="27" width="11" height="6"><path d="M28.3333 27H21.6666C21.6666 27 20.0001 27 20 29C19.9999 31 22.3875 33 25 33C27.6125 33 30 31 30 29C30 27 28.3333 27 28.3333 27Z" fill="#000000" fill-opacity="0.4"></path></mask><g mask="url(#tongue-mask)" style="opacity: 1;"><path d="M28.3333 27H21.6666C21.6666 27 20.0001 27 20 29C19.9999 31 22.3875 33 25 33C27.6125 33 30 31 30 29C30 27 28.3333 27 28.3333 27Z" fill="#000000" fill-opacity="1"></path><circle cx="25" cy="35" r="5" fill="#DB2C49" fill-opacity="0.5"></circle></g><path d="
+        M 20 30
+        Q 25 33.6 30 30
+      " stroke="#000000" stroke-opacity="0.4" stroke-linecap="round" style="opacity: 0;"></path></g><g><path d="M53.5 18.5L47 5C47 5 53.5 31.9722 24.5 36C-4.5 40.0278 1 1.5 1 1.5L-6.5 25L8.00002 44.5L15.5 52L39 49L53.5 18.5Z" fill="black" fill-opacity="0.1"></path><path d="M6.14471 8.44525C6.64924 7.12038 7.41962 5.99208 8.36394 5.15003C9.30652 4.30953 10.3901 3.78182 11.5089 3.58622" stroke="white" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" ></path><path d="M31.7084 5.95975C32.7822 4.70067 34.1021 3.81419 35.484 3.37609" stroke="white" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>
+      <span style="color: hsl(353deg, 100%, 52%);transform: translateY(15px); font-weight: 600;">10514</span>
+      
+    </div>
+    </aside> 
+</div>
+
+</div>
+</div>
+</div>
+<div>
+
+    <div class="tfooter">
+        <img src="./img.png" alt=""  class="imgg">
+        <svg style="z-index: 2;" class= "svg"  viewBox="0 0 1420 478" fill="rgb(223, 235, 246)" preserveAspectRatio="none" class="TutorialLayout__Swoops-sc-1yd3t28-11 bvuNug"><defs><clipPath id="clip0"><rect width="1420" height="478" fill="blue"></rect></clipPath></defs><g clip-path="url(#clip0)"><path d="M744 464C686 478.5 598 478.5 598 478.5H1394C1323.5 478.5 1241 478.5 1173 450.5C1105 422.5 1145.05 288.617 1066 256.5C986.945 224.383 914.079 230.227 849.5 286C805.5 324 822.393 444.402 744 464Z" fill="hsl(209deg 56% 92%)"></path></g></svg>
+    </div>
+    <footer style="width: 100%;">
+        <div style="width: 85%; max-width: 1100px; margin-inline: auto;">
+            <div class="footer">
+                <div class="fmain">
+                    <div class="logomain">
+                        <span class="logo">Josh</span>
+                        <div class="logomain2">
+                            <span><img src="./fig.svg" alt=""></span>
+                            <span><img src="./fig2.svg" alt=""></span>
+                        </div>
+                        <span class="logo">Comeau</span>
+                        
+                    </div>
+                    <p class="f1">Thanks for reading!</p>
+                <div>
+                <span class="f2">© 2020-present Joshua Comeau. All Rights Reserved.</span>
+            </div>
+            </div>
+            
+            <div class="tut">
+                <p class="item1">Tutorials</p>
+                <div class="tutorials">
+                <a href="">React</a>
+                <a href="">CSS</a>
+                <a href="">Gatsby</a>
+                <a href="">Performance</a>
+                <a href="">Animation</a>
+                <a href="">Career</a>
+                <a href="">Next.js</a>
+                <a href="">JavaScript</a>
+            </div>
+        </div>
+        <div class="tut2">
+        <p class="">Links</p>
+            
+                <div class="links">
+                <a href="">Twitter</a>
+                <a href="">Contact</a>
+                <a href="">Terms of Use</a>
+                <a href="">Privacy Policy</a>
+            </div>
+            </div>
+            </div>
+        
+            <div class="fmain2">
+                <div class="logomain" style="margin-inline:auto;">
+                    <span class="logo">Josh</span>
+                    <div class="logomain2">
+                        <span><img src="./fig.svg" alt=""></span>
+                        <span><img src="./fig2.svg" alt=""></span>
+                    </div>
+                    <span class="logo">Comeau</span>
+                    
+                </div>
+                <div class="side-flex1">
+                <div class="tut">
+                    <p class="item1">Tutorials</p>
+                    <div class="tutorials">
+                    <a href="">React</a>
+                    <a href="">CSS</a>
+                    <a href="">Gatsby</a>
+                    <a href="">Performance</a>
+                    <a href="">Animation</a>
+                    <a href="">Career</a>
+                    <a href="">Next.js</a>
+                    <a href="">JavaScript</a>
+                </div>
+            </div>
+            <div class="tut2">
+                <p class="">Links</p>
+                    
+                        <div class="links">
+                        <a href="">Twitter</a>
+                        <a href="">Contact</a>
+                        <a href="">Terms of Use</a>
+                        <a href="">Privacy Policy</a>
+                    </div>
+                    </div>
+                </div>
+                    <div style="text-align: center;">
+                        <span class="f2">© 2020-present Joshua Comeau. All Rights Reserved.</span>
+                    </div>
+            </div>
+            <div class="fmain3">
+                <div class="logomain" style="margin-inline:auto;">
+                    <span class="logo">Josh</span>
+                    <div class="logomain2">
+                        <span><img src="./fig.svg" alt=""></span>
+                        <span><img src="./fig2.svg" alt=""></span>
+                    </div>
+                    <span class="logo">Comeau</span>
+                    
+                </div>
+                <div class="side-flex1">
+                    <div class="tut">
+                        <p class="item1">Tutorials</p>
+                        <div class="tutorials2">
+                        <a href="">React</a>
+                        <a href="">CSS</a>
+                        <a href="">Gatsby</a>
+                        <a href="">Performance</a>
+                        <a href="">Animation</a>
+                        <a href="">Career</a>
+                        <a href="">Next.js</a>
+                        <a href="">JavaScript</a>
+                    </div>
+                </div>
+                <div class="tut2">
+                    <p class="">Links</p>
+                        
+                            <div class="links">
+                            <a href="">Twitter</a>
+                            <a href="">Contact</a>
+                            <a href="">Terms of Use</a>
+                            <a href="">Privacy Policy</a>
+                        </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <span class="f2">© 2020-present Joshua Comeau. All Rights Reserved.</span>
+                    </div>
+            </div>
+    </div>
+        </footer>
+</div>
+
+
+<script>
+    var myClip1 = document.querySelector('.clip1')
+    var myClip2 = document.querySelector('.clip2')
+    var myClip3 = document.querySelector('.clip3')
+    var myClip4 = document.querySelector('.clip4')
+    var myClip5 = document.querySelector('.clip5')
+    function displayClipEx(){
+        myClip1.style.opacity = 1
+    }
+    function hideClipEx(){
+        myClip1.style.opacity = 0
+    }
+    function displayClipSt(){
+        myClip2.style.opacity = 1
+    }
+    function hideClipSt(){
+        myClip2.style.opacity = 0
+    }
+    function displayClipEs(){
+        myClip3.style.opacity = 1
+    }
+    function hideClipEs(){
+        myClip3.style.opacity = 0
+    }
+    function displayClipPi(){
+        myClip4.style.opacity = 1
+    }
+    function hideClipPi(){
+        myClip4.style.opacity = 0
+    }
+    function displayClipIs(){
+        myClip5.style.opacity = 1
+    }
+    function hideClipIs(){
+        myClip5.style.opacity = 0
+    }
+</script>
+</body>
+</html>
